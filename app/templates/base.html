@@ -1,0 +1,18 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>My Blog</title>
+    </head>
+    <body>
+        {% if user.is_authenticated %}
+            {% include 'nav/authenticated.html' %}
+        {% else %}
+            {% include 'nav/not-authenticated.html' %}
+        {% endif %}
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>

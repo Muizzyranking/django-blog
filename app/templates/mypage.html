@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        Post you liked
+        <div>
+            <p>Let's only display posts that have been liked</p>
+            {% for like in likes %}<li>{{ like.post.title }}</li>{% endfor %}
+        </div>
+    </div>
+    <div>
+        Posts you clicked on to add
+        <div>
+            <p>Let's display only the posts that you clicked on</p>
+            {% for scrap in scraps %}<li>{{ scrap.post.title }}</li>{% endfor %}
+        </div>
+    {% endblock content %}
+</div>
